@@ -1,0 +1,266 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f5f1ea;
+  --foreground: #1a1612;
+  --muted: #8a7f73;
+  --muted-foreground: #5c5349;
+  --border: #d9cfc0;
+  --card: #ede6d9;
+  --accent: #8b4513;
+  --accent-foreground: #f5f1ea;
+  --grain-opacity: 0.08;
+}
+
+.dark {
+  --background: #1a1612;
+  --foreground: #eae0cf;
+  --muted: #6b6257;
+  --muted-foreground: #a89c8a;
+  --border: #2e2823;
+  --card: #231e18;
+  --accent: #c89968;
+  --accent-foreground: #1a1612;
+  --grain-opacity: 0.06;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-fraunces);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+::selection {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.font-serif {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+  letter-spacing: -0.02em;
+}
+
+.font-mono {
+  font-family: var(--font-geist-mono), monospace;
+}
+
+/* Vintage grain overlay */
+.grain-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: var(--grain-opacity);
+  mix-blend-mode: multiply;
+}
+.dark .grain-layer {
+  mix-blend-mode: screen;
+}
+
+/* Vignette */
+.vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 99;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 55%,
+    color-mix(in oklab, var(--foreground) 18%, transparent) 100%
+  );
+}
+
+/* Hide system cursor on hover devices */
+@media (hover: hover) and (pointer: fine) {
+  html,
+  body,
+  a,
+  button,
+  input,
+  textarea,
+  [role="button"] {
+    cursor: none !important;
+  }
+}
+
+/* Custom cursor */
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 200;
+  will-change: transform;
+}
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--foreground);
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s;
+}
+.cursor-ring {
+  width: 34px;
+  height: 34px;
+  border: 1px solid color-mix(in oklab, var(--foreground) 55%, transparent);
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.2s,
+    height 0.2s,
+    border-color 0.2s,
+    opacity 0.2s;
+}
+.cursor-ring.is-hover {
+  width: 52px;
+  height: 52px;
+  border-color: var(--accent);
+  background: color-mix(in oklab, var(--accent) 8%, transparent);
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring,
+  .dog-companion {
+    display: none !important;
+  }
+}
+
+/* Dog companion */
+.dog-companion {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 40px;
+  pointer-events: none;
+  z-index: 90;
+  transform-origin: bottom center;
+  will-change: transform;
+  filter: drop-shadow(0 4px 6px color-mix(in oklab, var(--foreground) 20%, transparent));
+}
+.dog-companion.flipped .dog-sprite {
+  transform: scaleX(-1);
+}
+.dog-sprite {
+  width: 100%;
+  height: 100%;
+  color: var(--foreground);
+}
+
+/* 24fps stepped bob for idle */
+@keyframes dog-idle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+.dog-companion.idle .dog-sprite-inner {
+  animation: dog-idle 0.8s steps(6) infinite;
+  display: block;
+}
+
+/* Walking: bounce body */
+@keyframes dog-walk {
+  0% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  25% {
+    transform: translateY(-3px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(0) rotate(2deg);
+  }
+  75% {
+    transform: translateY(-3px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+}
+.dog-companion.walking .dog-sprite-inner {
+  animation: dog-walk 0.42s steps(8) infinite;
+}
+
+/* Leg swing for walking */
+@keyframes leg-front {
+  0%,
+  100% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+}
+@keyframes leg-back {
+  0%,
+  100% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+}
+.dog-companion.walking .leg-front {
+  animation: leg-front 0.42s steps(4) infinite;
+  transform-origin: top center;
+}
+.dog-companion.walking .leg-back {
+  animation: leg-back 0.42s steps(4) infinite;
+  transform-origin: top center;
+}
+
+/* Tail wag */
+@keyframes tail-wag {
+  0%,
+  100% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+}
+.dog-companion .tail {
+  animation: tail-wag 0.5s steps(4) infinite;
+  transform-origin: right center;
+}
+
+.paper-edge {
+  background-image:
+    linear-gradient(var(--background), var(--background)),
+    repeating-linear-gradient(
+      0deg,
+      color-mix(in oklab, var(--foreground) 5%, transparent) 0,
+      color-mix(in oklab, var(--foreground) 5%, transparent) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+}
