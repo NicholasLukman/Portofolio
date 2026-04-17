@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# contoh_portofolio
 
-## Getting Started
+Portfolio web minimalist bertema vintage 24fps — dark/light mode, custom cursor, dan seekor anjing pixel yang ngikutin cursor.
 
-First, run the development server:
+## Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Next.js 16** (App Router, Turbopack) + **TypeScript**
+- **Tailwind CSS v4** + **next-themes** (dark/light mode)
+- **GSAP** (`@gsap/react`) dengan stepped easing buat vintage cinematic feel
+- **Fraunces** serif display + **Geist** sans/mono
+- **Bun** sebagai package manager
+
+## Struktur
+
+```
+src/
+├── app/
+│   ├── layout.tsx          # Root layout + theme + font
+│   ├── page.tsx            # Home (hero + services + featured + CTA)
+│   ├── globals.css         # Tailwind + CSS vars + grain + cursor + dog
+│   ├── about/page.tsx
+│   ├── projects/page.tsx
+│   ├── projects/[slug]/page.tsx
+│   └── contact/page.tsx
+├── components/
+│   ├── Navbar.tsx          # Sticky nav + mobile menu
+│   ├── Footer.tsx
+│   ├── ThemeProvider.tsx   # Wrapper next-themes
+│   ├── ThemeToggle.tsx     # Sun/moon toggle
+│   ├── Hero.tsx            # GSAP timeline stepped 24fps
+│   ├── Reveal.tsx          # GSAP ScrollTrigger wrapper
+│   ├── ProjectCard.tsx
+│   ├── ContactForm.tsx
+│   ├── GrainOverlay.tsx    # Film grain + vignette
+│   ├── Cursor.tsx          # Custom cursor 24fps
+│   └── DogCompanion.tsx    # Anjing pixel ngikutin cursor
+└── lib/
+    ├── nav.ts
+    └── projects.ts         # Placeholder projects data
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+bun install
+bun dev          # http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Script
 
-## Learn More
+```bash
+bun dev          # dev server
+bun run build    # production build
+bun run start    # serve hasil build
+bun run lint     # ESLint check
+bunx tsc --noEmit  # type check
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Cara deploy ke Vercel — lihat **[DEPLOY.md](./DEPLOY.md)** buat panduan step-by-step dalam Bahasa Indonesia.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Singkatnya: import repo ini di [vercel.com/new](https://vercel.com/new), klik **Deploy**, selesai. Auto deploy tiap `git push origin main`.
 
-## Deploy on Vercel
+## Ubah Konten
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Data projects**: edit `src/lib/projects.ts`
+- **Nama & bio**: edit `src/app/about/page.tsx`
+- **Kontak & social**: edit `src/app/contact/page.tsx`
+- **Hero copy**: edit `src/components/Hero.tsx`
+- **Palette warna**: edit CSS vars di `src/app/globals.css` (bagian `:root` dan `.dark`)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Lisensi
+
+MIT.
