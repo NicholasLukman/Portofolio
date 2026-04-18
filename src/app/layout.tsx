@@ -25,7 +25,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "Nicholas Lukman— Full Stack Developer",
+  title: "Nicholas Lukman— Bunda Mulia University Student",
   description:
     "Portfolio of Nicholas Lukman",
 };
