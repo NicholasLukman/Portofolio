@@ -25,9 +25,9 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "Evan — Full Stack Developer",
+  title: "Nicholas Lukman— Full Stack Developer",
   description:
-    "Portfolio of Evan Stefanus Candra, a full stack developer building modern web and mobile products.",
+    "Portfolio of Nicholas Lukman",
 };
 
 export default function RootLayout({

@@ -30,7 +30,7 @@ export default function Footer() {
 
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-5xl flex-col items-start justify-between gap-2 px-5 py-5 font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground sm:flex-row sm:items-center sm:px-8">
-          <span>© MMXX – MMXXVI · Evan Stefanus Candra</span>
+          <span>© MMXX – MMXXVI · Nicholas Lukman</span>
           <span>Next.js · Tailwind · GSAP</span>
         </div>
       </div>

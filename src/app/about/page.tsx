@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "About — Evan",
+  title: "About — Nicholas Lukman",
   description:
     "A little about me, the principles I design by, and the tools I work with.",
 };
@@ -10,42 +10,42 @@ export const metadata: Metadata = {
 const skills = [
   {
     group: "Frontend",
-    items: ["Next.js", "React", "TypeScript", "Tailwind", "GSAP", "Ant Design"],
+    items: ["CSS"],
   },
   {
     group: "Backend",
-    items: ["Node.js", "Express", "Prisma", "PostgreSQL", "MSSQL", "Redis"],
+    items: ['MySQL','JS','PHP'],
   },
   {
     group: "Mobile",
-    items: ["Capacitor", "React Native", "Offline sync", "Camera / BLE"],
+    items: ["Kotlin", "PHP", " MySQL", "SQLite"],
   },
-  {
+  { 
     group: "Tooling",
-    items: ["Bun", "pnpm", "Docker", "GitHub Actions", "Nginx", "Vercel"],
+    items: ["Figma","Cisco","Autopsy","Wireshark"],
   },
 ];
 
 const timeline = [
   {
-    year: "MMXXV",
-    title: "Senior full stack, manufacturing ERP",
-    body: "Leading a multi-site ERP spanning web, mobile, and SAP integrations.",
+    year: "2026",
+    title: "SIEM Home Lab",
+    body: "Support Marketing With Event As Education Conselour Bunda Mulia University",
   },
   {
-    year: "MMXXIII",
-    title: "Full stack engineer",
-    body: "Shipped CRM, sales quotation, and inventory modules across six internal apps.",
+    year: "2025",
+    title: "Journal Publish",
+    body: "Publish Journal About Software Development of Motorcycle Repair Shop",
   },
   {
-    year: "MMXXII",
-    title: "Frontend engineer",
-    body: "Built design system, dashboards, and onboarding flows for early stage startups.",
+    year: "2023 - Present",
+    title: "Campus Representative",
+    body: "Support Marketing With Event As Education Conselour Bunda Mulia University",
   },
   {
-    year: "MMXX",
-    title: "Fell for the craft",
-    body: "Started building for the web — fell in love with the loop of shipping and iterating.",
+    year: "2023 - Present",
+    title: "University Project",
+    body: "Network topology, Mobile App Program, Website",
   },
 ];
 
@@ -76,13 +76,11 @@ export default function AboutPage() {
           Vol. II — About
         </p>
         <h1 className="mt-4 font-serif text-5xl leading-[1.02] text-balance sm:text-7xl">
-          Hello, I&apos;m <span className="italic">Evan</span>.
+          Hello, I&apos;m <span className="italic">Nicholas</span>.
         </h1>
         <p className="mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-          An engineer who partners with teams to turn rough ideas into
-          production ready products. My sweet spot is the seam between design
-          and engineering — making interfaces feel considered while keeping the
-          stack tidy underneath.
+          An university student who have enthusiast at technology, especially with Networking and
+          Cybersecurity domain.
         </p>
       </Reveal>
 

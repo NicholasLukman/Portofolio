@@ -3,18 +3,17 @@ import Reveal from "@/components/Reveal";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact — Evan",
+  title: "Contact — Nicholas",
   description: "Say hi — open for freelance, full time, and collaborations.",
 };
 
 const socials = [
-  { label: "Email", value: "hello@evan.dev", href: "mailto:hello@evan.dev" },
-  { label: "GitHub", value: "github.com/evanstef", href: "https://github.com/evanstef" },
-  { label: "LinkedIn", value: "linkedin.com/in/evanstef", href: "https://linkedin.com/in/evanstef" },
-  { label: "Twitter", value: "@evanstef", href: "https://twitter.com/evanstef" },
+  { label: "Email", value: "nicholaslukman87@gmail.com", href: "mailto:nicholaslukman87@gmail.com" },
+  { label: "GitHub", value: "github.com/nicholaslukman", href: "https://github.com/nicholaslukman" },
+  { label: "LinkedIn", value: "linkedin.com/in/nicholaslukman", href: "https://www.linkedin.com/in/nicholas-lukman-075532365"},
 ];
 
-export default function ContactPage() {
+export default function ContactPage() { 
   return (
     <div className="mx-auto max-w-4xl px-5 py-20 sm:px-8 sm:py-28">
       <Reveal>
@@ -22,12 +21,10 @@ export default function ContactPage() {
           Vol. IV — Correspondence
         </p>
         <h1 className="mt-4 font-serif text-5xl leading-[1.02] text-balance sm:text-7xl">
-          Let&apos;s build <span className="italic">something</span> worth
-          shipping.
+         Contact Me
         </h1>
         <p className="mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-          Tell me a little about your project, team, or problem — I usually
-          reply within a day or two.
+          Contact Me with the contact below
         </p>
       </Reveal>
 
@@ -72,9 +69,7 @@ export default function ContactPage() {
               Availability
             </p>
             <p className="mt-4 font-serif text-lg leading-relaxed">
-              Currently booking engagements for{" "}
-              <span className="italic">Q3 MMXXVI</span>. Short waitlist kept for
-              urgent work — reach out and we&apos;ll figure it out.
+              
             </p>
           </div>
         </Reveal>

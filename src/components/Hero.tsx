@@ -63,16 +63,15 @@ export default function Hero() {
         </div>
 
         <h1 className="mt-8 font-serif text-5xl font-light leading-[1.02] text-balance sm:text-7xl md:text-[88px]">
-          <span className="hero-title-line block">Quiet interfaces,</span>
+          <span className="hero-title-line block">Simple interfaces,</span>
           <span className="hero-title-line block italic">
             crafted with care.
           </span>
         </h1>
 
         <p className="hero-subtitle mx-auto mt-8 max-w-xl text-balance text-base leading-relaxed text-muted-foreground sm:text-lg">
-          I&apos;m <span className="font-serif italic text-foreground">Evan</span>
-          {" "}— a full stack developer helping small teams ship web and mobile
-          experiences that feel considered.
+          I&apos;m <span className="font-serif italic text-foreground">Nicholas Lukman</span>
+          {" "}— Bunda Mulia University Third Year Student, Information Technology Major, Cybersecurity and Networking 
         </p>
 
         <div className="hero-cta mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -97,22 +96,7 @@ export default function Hero() {
         </div>
 
         <dl className="hero-meta mx-auto mt-20 grid w-full max-w-3xl grid-cols-2 gap-y-6 text-left sm:grid-cols-4">
-          {[
-            { k: "MMXX", v: "Est." },
-            { k: "30+", v: "Shipped" },
-            { k: "12", v: "Teams" },
-            { k: "∞", v: "Coffee" },
-          ].map((m) => (
-            <div
-              key={m.v}
-              className="border-l border-border px-4"
-            >
-              <dt className="font-serif text-3xl">{m.k}</dt>
-              <dd className="mt-1 font-mono text-[10px] uppercase tracking-[0.24em] text-muted-foreground">
-                {m.v}
-              </dd>
-            </div>
-          ))}
+          {}
         </dl>
       </div>
     </section>

@@ -21,12 +21,12 @@ export default function ContactForm() {
   return (
     <form onSubmit={onSubmit} className="space-y-8">
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-        <Field label="Your name" name="name" placeholder="Jane Doe" required disabled={disabled} />
+        <Field label="Your name" name="name" placeholder="Nicholas Lukman" required disabled={disabled} />
         <Field
           label="Email"
           name="email"
           type="email"
-          placeholder="jane@company.com"
+          placeholder="nicholaslukman87@gmail.com"
           required
           disabled={disabled}
         />
@@ -50,7 +50,7 @@ export default function ContactForm() {
           required
           rows={6}
           disabled={disabled}
-          placeholder="What are you building? Timeline, team, anything useful."
+          placeholder=""
           className="mt-3 w-full resize-none border-b border-border bg-transparent pb-3 font-serif text-base outline-none transition placeholder:text-muted-foreground focus:border-foreground disabled:opacity-60"
         />
       </div>

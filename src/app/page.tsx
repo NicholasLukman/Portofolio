@@ -7,27 +7,21 @@ import { projects } from "@/lib/projects";
 const services = [
   {
     num: "i.",
-    title: "Product engineering",
+    title: "Socialize",
     description:
-      "Feature delivery from discovery to launch — observable, maintainable, shipped weekly.",
+      "Communicate with the team and making new friends",
   },
   {
     num: "ii.",
-    title: "Design systems",
+    title: "Prototype Design",
     description:
-      "Scalable component libraries with theming, accessibility, and living documentation.",
+      "Making the design standout, eye-catching, and easy to use",
   },
   {
     num: "iii.",
-    title: "Performance",
+    title: "Problem Solving",
     description:
-      "Profiling, budgets, and incremental refactors that keep experiences fast as they grow.",
-  },
-  {
-    num: "iv.",
-    title: "Mobile & offline",
-    description:
-      "Capacitor shipped apps for field teams, with sync, camera, and hardware integrations.",
+      "Thinking outside the box for the solution to the problem",
   },
 ];
 
@@ -48,7 +42,7 @@ export default function HomePage() {
               Ch. 01 — Practice
             </p>
             <h2 className="mt-4 font-serif text-4xl leading-[1.05] sm:text-5xl">
-              Four things I do{" "}
+              Three things I do{" "}
               <span className="italic">well</span>.
             </h2>
           </div>
@@ -80,8 +74,9 @@ export default function HomePage() {
               Ch. 02 — Selected Works
             </p>
             <h2 className="mt-4 font-serif text-4xl leading-[1.05] sm:text-5xl">
-              A small gallery.
+              Experience
             </h2>
+              
           </div>
           <Link
             href="/projects"

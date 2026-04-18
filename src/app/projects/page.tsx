@@ -4,7 +4,7 @@ import Reveal from "@/components/Reveal";
 import { projects } from "@/lib/projects";
 
 export const metadata: Metadata = {
-  title: "Projects — Evan",
+  title: "Projects — Nicholas Lukman",
   description: "Selected work across web, mobile, and internal tooling.",
 };
 

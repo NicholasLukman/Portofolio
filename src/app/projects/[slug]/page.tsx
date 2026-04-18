@@ -19,7 +19,7 @@ export async function generateMetadata({
   const project = getProject(slug);
   if (!project) return { title: "Project not found" };
   return {
-    title: `${project.title} — Evan`,
+    title: `${project.title} — Nicholas Lukman`,
     description: project.tagline,
   };
 }

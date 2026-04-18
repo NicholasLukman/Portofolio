@@ -44,9 +44,9 @@ export default function Navbar() {
           href="/"
           className="group flex items-baseline gap-2 font-serif text-lg tracking-tight"
         >
-          <span className="italic">Evan</span>
+          <span className="italic">Nicholas Lukman</span>
           <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-muted-foreground">
-            — Est. 2020
+            — Est. 2026
           </span>
         </Link>
 
