@@ -1,9 +1,9 @@
 "use client";
-
 import Link from "next/link";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import Image from "next/image";
 
 export default function Hero() {
   const root = useRef<HTMLDivElement>(null);
@@ -62,12 +62,14 @@ export default function Hero() {
           <span className="h-px w-10 bg-border" />
         </div>
 
-        <h1 className="mt-8 font-serif text-5xl font-light leading-[1.02] text-balance sm:text-7xl md:text-[88px]">
-          <span className="hero-title-line block">Simple interfaces,</span>
-          <span className="hero-title-line block italic">
-            crafted with care.
-          </span>
-        </h1>
+        <div className="flex justify-center mt-10">
+          <Image 
+          src="/images/FotoGw.jpg"
+          alt="Nicholas Lukman" 
+          width={200}
+          height={200}
+          className="rounded-full"/>
+        </div>
 
         <p className="hero-subtitle mx-auto mt-8 max-w-xl text-balance text-base leading-relaxed text-muted-foreground sm:text-lg">
           I&apos;m <span className="font-serif italic text-foreground">Nicholas Lukman</span>

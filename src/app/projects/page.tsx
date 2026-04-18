@@ -16,7 +16,7 @@ export default function ProjectsPage() {
           Vol. III — The Catalogue
         </p>
         <h1 className="mt-4 font-serif text-5xl leading-[1.02] text-balance sm:text-7xl">
-          A selection of <span className="italic">things</span> I&apos;ve built.
+          A selection of <span className="italic">things </span> I&apos;ve built.
         </h1>
         <p className="mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
           From internal tooling quietly serving hundreds of users to polished

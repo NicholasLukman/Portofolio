@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Project } from "@/lib/projects";
+import Image from "next/image"; 
 
 export default function ProjectCard({
   project,
@@ -21,7 +22,7 @@ export default function ProjectCard({
           {project.year}
         </span>
       </div>
-
+      
       <div>
         <h3 className="font-serif text-3xl leading-[1.1] transition-colors group-hover:text-accent sm:text-4xl">
           {project.title}

@@ -8,6 +8,7 @@ export type Project = {
   stack: string[];
   highlights: string[];
   links?: { label: string; href: string }[];
+  image?: string;
 };
 
 export const projects: Project[] = [
@@ -23,12 +24,8 @@ export const projects: Project[] = [
     highlights: [
       "See the log of the files ( timestamp, rename history, file modification)",
       "Wazuh as Dashboard, Windows Agent, Ubuntu Server",
-      
     ],
-    links: [
-      { label: "Live", href: "#" },
-      { label: "Case study", href: "#" },
-    ],
+    image:"/images/Wazuh.jpeg"
   },
   {
     slug: "pulse-crm",
@@ -44,6 +41,7 @@ export const projects: Project[] = [
       "Scholarship Information",
       "Edufair",
     ],
+    image:"/images/CR.jpeg",
   },
  
   {
@@ -62,6 +60,7 @@ export const projects: Project[] = [
     "Mobile Using kotling to develop Androind App",
     "Build Topology with Cisco Packet Tracer"
     ],
+    image:"/images/Cisco.png",
   },
 ];
 

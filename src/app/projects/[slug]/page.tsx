@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Reveal from "@/components/Reveal";
 import { getProject, projects } from "@/lib/projects";
+import Image from "next/image";
 
 type Params = { slug: string };
 
@@ -60,7 +61,17 @@ export default async function ProjectDetailPage({
           {project.tagline}
         </p>
       </Reveal>
-
+      {project.image && (
+    <div className="overflow-hidden rounded-xl">
+      <Image
+        src={project.image}
+        alt={project.title}
+        width={600}
+        height={350}
+        className="transition duration-300 group-hover:scale-105"
+      />
+    </div>
+  )}
       <Reveal className="mt-14 border-t border-border pt-8">
         <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
           Overview
